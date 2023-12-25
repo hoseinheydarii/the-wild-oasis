@@ -10,10 +10,15 @@ import Cabins from "./pages/Cabins";
 import AppLayout from "./ui/AppLayout";
 import Booking from "./pages/Booking";
 import Checkin from "./pages/Checkin";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <ProtectedRoute>
+        <AppLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         element: <Navigate replace to="dashboard" />,
